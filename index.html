@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belgraderent - Premium Property Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .value-item h3 {
+            margin: 15px 0;
+            color: #1a1a1a;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin: 40px 0;
+        }
+
+        .phone-number {
+            font-size: 2em;
+            color: #1a1a1a;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Belgraderent Logo" class="logo">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Maximize Your Property's Potential in Belgrade</h1>
+            <p>Professional property management services for discerning property owners</p>
+            <a href="#contact" class="cta-button">List Your Property</a>
+        </div>
+    </section>
+
+    <section class="value-prop">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Why Choose Belgraderent?</h2>
+            <div class="value-grid">
+                <div class="value-item">
+                    <h3>Market Expertise</h3>
+                    <p>Deep understanding of Belgrade's premium real estate market</p>
+                </div>
+                <div class="value-item">
+                    <h3>Professional Management</h3>
+                    <p>Complete property management services tailored to your needs</p>
+                </div>
+                <div class="value-item">
+                    <h3>Trusted Partner</h3>
+                    <p>Your property is in safe hands with our experienced team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Ready to Partner With Us?</h2>
+            <div class="contact-info">
+                <p>Call us today to discuss your property</p>
+                <div class="phone-number">+381 XX XXX XXXX</div>
+                <p>Business Hours: Monday - Friday, 9:00 - 18:00</p>
+            </div>
+            <a href="mailto:contact@belgraderent.com" class="cta-button">Email Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Belgraderent. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
