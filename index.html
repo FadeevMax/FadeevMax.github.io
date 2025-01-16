@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belgraderent - Premium Property Management</title>
+    <title>Belgraderent - Property Rental & Management Experts</title>
+    <meta name="description" content="Izdavanje stanova u Beogradu, pronalaženje pouzdanih stanara. Profesionalno upravljanje nekretninama bez provizije. Usluge za vlasnike nekretnina u Beogradu, Srbiji i za međunarodne klijente.">
+    <meta name="keywords" content="izdavanje stanova Beograd, iznajmljivanje nekretnina Srbija, stanovi za izdavanje, izdavanje stanova bez provizije, upravljanje nekretninama Beograd, dugoročni najam, rent apartment Belgrade, найти жильцов Белград, сдать квартиру в Белграде, property management Serbia, long-term rental Belgrade">
     <style>
         * {
             margin: 0;
@@ -73,10 +72,43 @@
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s;
+            margin: 10px;
         }
 
         .cta-button:hover {
             background-color: #333;
+        }
+
+        .cx-how-it-works {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .cx-how-it-works h2 {
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .cx-how-it-works ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .cx-how-it-works ul li {
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .cx-how-it-works ul li h3 {
+            margin-bottom: 15px;
+            color: #1a1a1a;
         }
 
         footer {
@@ -84,6 +116,16 @@
             color: white;
             padding: 40px 0;
             text-align: center;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -101,6 +143,27 @@
             <h1 id="hero-title">Maximize Your Property's Potential in Belgrade</h1>
             <p id="hero-text">Professional property management services for discerning property owners</p>
             <a href="#contact" class="cta-button" id="cta-button">List Your Property</a>
+            <a href="https://t.me/belgraderent" target="_blank" class="cta-button" id="telegram-button">Contact on Telegram</a>
+        </div>
+    </section>
+
+    <section class="cx-how-it-works">
+        <div class="container">
+            <h2 id="how-works-title">How We Help You Rent Your Property</h2>
+            <ul>
+                <li>
+                    <h3 id="how-works-1-title">Find Perfect Tenants</h3>
+                    <p id="how-works-1-text">We help you find reliable, long-term tenants quickly and efficiently</p>
+                </li>
+                <li>
+                    <h3 id="how-works-2-title">No Hidden Fees</h3>
+                    <p id="how-works-2-text">Transparent pricing with no additional commissions or hidden costs</p>
+                </li>
+                <li>
+                    <h3 id="how-works-3-title">Professional Management</h3>
+                    <p id="how-works-3-text">Complete property management from tenant screening to maintenance</p>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -133,21 +196,33 @@
                 <p id="contact-hours">Business Hours: Monday - Friday, 9:00 - 18:00</p>
             </div>
             <a href="mailto:contact@belgraderent.com" class="cta-button" id="email-button">Email Us</a>
+            <a href="https://t.me/belgraderent" target="_blank" class="cta-button" id="telegram-contact">Contact on Telegram</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <p id="footer-text">&copy; 2024 Belgraderent. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://t.me/belgraderent" target="_blank">Telegram</a>
+            </div>
         </div>
     </footer>
 
     <script>
         const translations = {
             en: {
-                "hero-title": "Maximize Your Property's Potential in Belgrade",
-                "hero-text": "Professional property management services for discerning property owners",
+                "hero-title": "Find Tenants, Rent Your Property in Belgrade",
+                "hero-text": "Professional rental services for property owners - No commission, long-term rentals",
                 "cta-button": "List Your Property",
+                "telegram-button": "Contact on Telegram",
+                "how-works-title": "How We Help You Rent Your Property",
+                "how-works-1-title": "Find Perfect Tenants",
+                "how-works-1-text": "We help you find reliable, long-term tenants quickly and efficiently",
+                "how-works-2-title": "No Hidden Fees",
+                "how-works-2-text": "Transparent pricing with no additional commissions or hidden costs",
+                "how-works-3-title": "Professional Management",
+                "how-works-3-text": "Complete property management from tenant screening to maintenance",
                 "value-title": "Why Choose Belgraderent?",
                 "value-item-1-title": "Market Expertise",
                 "value-item-1-text": "Deep understanding of Belgrade's premium real estate market",
@@ -160,24 +235,34 @@
                 "phone-number": "+381 XX XXX XXXX",
                 "contact-hours": "Business Hours: Monday - Friday, 9:00 - 18:00",
                 "email-button": "Email Us",
+                "telegram-contact": "Contact on Telegram",
                 "footer-text": "&copy; 2024 Belgraderent. All rights reserved."
             },
             sr: {
-                "hero-title": "Maksimalno iskoristite potencijal vaše nekretnine u Beogradu",
-                "hero-text": "Profesionalne usluge upravljanja nekretninama za vlasnike sa visokim zahtevima",
+                "hero-title": "Pronađite Stanare, Izdajte Nekretninu u Beogradu",
+                "hero-text": "Profesionalne usluge izdavanja za vlasnike nekretnina - Bez provizije, dugoročni najam",
                 "cta-button": "Oglasite Vašu Nekretninu",
-                "value-title": "Zašto odabrati Belgraderent?",
-                "value-item-1-title": "Tržišna stručnost",
+                "telegram-button": "Kontaktirajte na Telegramu",
+                "how-works-title": "Kako Vam Pomažemo da Izdate Nekretninu",
+                "how-works-1-title": "Pronalazak Idealnih Stanara",
+                "how-works-1-text": "Pomažemo vam da brzo i efikasno pronađete pouzdane, dugoročne stanare",
+                "how-works-2-title": "Bez Skrivenih Troškova",
+                "how-works-2-text": "Transparentno cenovnik bez dodatnih provizija ili skrivenih troškova",
+                "how-works-3-title": "Profesionalno Upravljanje",
+                "how-works-3-text": "Kompletno upravljanje nekretninom od provere stanara do održavanja",
+                "value-title": "Zašto Odabrati Belgraderent?",
+                "value-item-1-title": "Tržišna Stručnost",
                 "value-item-1-text": "Duboko razumevanje premium tržišta nekretnina u Beogradu",
-                "value-item-2-title": "Profesionalno upravljanje",
+                "value-item-2-title": "Profesionalno Upravljanje",
                 "value-item-2-text": "Kompletne usluge upravljanja nekretninama prilagođene vašim potrebama",
-                "value-item-3-title": "Pouzdan partner",
+                "value-item-3-title": "Pouzdan Partner",
                 "value-item-3-text": "Vaša nekretnina je u sigurnim rukama našeg iskusnog tima",
-                "contact-title": "Spremni za saradnju sa nama?",
+                "contact-title": "Spremni za Saradnju?",
                 "contact-info": "Pozovite nas danas da razgovaramo o vašoj nekretnini",
                 "phone-number": "+381 XX XXX XXXX",
-                "contact-hours": "Radno vreme: Ponedeljak - Petak, 9:00 - 18:00",
+                "contact-hours": "Radno Vreme: Ponedeljak - Petak, 9:00 - 18:00",
                 "email-button": "Pošaljite nam e-mail",
+                "telegram-contact": "Kontaktirajte na Telegramu",
                 "footer-text": "&copy; 2024 Belgraderent. Sva prava zadržana."
             }
         };
@@ -188,6 +273,3 @@
             });
         }
     </script>
-</body>
-</html>
-
