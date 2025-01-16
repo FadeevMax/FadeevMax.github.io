@@ -1,19 +1,29 @@
-="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belgraderent - Property Rental & Management Experts</title>
+    <title>Belgraderent - Comprehensive Property Management Solutions</title>
     <meta name="description" content="Izdavanje stanova u Beogradu, pronalaženje pouzdanih stanara. Profesionalno upravljanje nekretninama bez provizije. Usluge za vlasnike nekretnina u Beogradu, Srbiji i za međunarodne klijente.">
     <meta name="keywords" content="izdavanje stanova Beograd, iznajmljivanje nekretnina Srbija, stanovi za izdavanje, izdavanje stanova bez provizije, upravljanje nekretninama Beograd, dugoročni najam, rent apartment Belgrade, найти жильцов Белград, сдать квартиру в Белграде, property management Serbia, long-term rental Belgrade">
     <style>
+        :root {
+            --primary-color: #017c8b;
+            --secondary-color: #6ab6b7;
+            --text-color: #37474f;
+            --background-color: #f4f7fa;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', 'Montserrat', sans-serif;
         }
 
         body {
             background-color: #ffffff;
-            color: #333;
+            color: var(--text-color);
             line-height: 1.6;
         }
 
@@ -33,7 +43,7 @@
         }
 
         .logo {
-            width: 150px;
+            width: 180px;
         }
 
         .language-selector {
@@ -43,7 +53,7 @@
 
         .language-button {
             padding: 10px 20px;
-            background-color: #1a1a1a;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 5px;
@@ -52,21 +62,27 @@
         }
 
         .language-button:hover {
-            background-color: #333;
+            background-color: var(--secondary-color);
         }
 
         .hero {
             background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3');
             background-size: cover;
             background-position: center;
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
 
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #1a1a1a;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -76,18 +92,19 @@
         }
 
         .cta-button:hover {
-            background-color: #333;
+            background-color: var(--secondary-color);
         }
 
         .cx-how-it-works {
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
-            background-color: #f9f9f9;
+            background-color: var(--background-color);
         }
 
         .cx-how-it-works h2 {
-            margin-bottom: 40px;
-            color: #333;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
         }
 
         .cx-how-it-works ul {
@@ -99,20 +116,66 @@
 
         .cx-how-it-works ul li {
             width: 30%;
-            padding: 20px;
-            margin: 10px;
+            padding: 30px;
+            margin: 15px;
             background-color: white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-radius: 5px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .cx-how-it-works ul li:hover {
+            transform: translateY(-10px);
         }
 
         .cx-how-it-works ul li h3 {
-            margin-bottom: 15px;
-            color: #1a1a1a;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .benefits {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .benefits-item {
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .benefits-item img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            background-color: var(--background-color);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
         }
 
         footer {
-            background-color: #1a1a1a;
+            background-color: var(--primary-color);
             color: white;
             padding: 40px 0;
             text-align: center;
@@ -126,6 +189,13 @@
             color: white;
             text-decoration: none;
             margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .cx-how-it-works ul li,
+            .benefits-item {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -167,21 +237,24 @@
         </div>
     </section>
 
-    <section class="value-prop">
+    <section class="benefits">
         <div class="container">
-            <h2 id="value-title" style="text-align: center; margin-bottom: 40px;">Why Choose Belgraderent?</h2>
-            <div class="value-grid">
-                <div class="value-item">
-                    <h3 id="value-item-1-title">Market Expertise</h3>
-                    <p id="value-item-1-text">Deep understanding of Belgrade's premium real estate market</p>
+            <h2 id="benefits-title">Why Property Owners Trust Us</h2>
+            <div class="benefits-grid">
+                <div class="benefits-item">
+                    <img src="https://via.placeholder.com/100" alt="Market Knowledge">
+                    <h3 id="benefits-1-title">Local Market Expertise</h3>
+                    <p id="benefits-1-text">In-depth understanding of Belgrade's real estate dynamics</p>
                 </div>
-                <div class="value-item">
-                    <h3 id="value-item-2-title">Professional Management</h3>
-                    <p id="value-item-2-text">Complete property management services tailored to your needs</p>
+                <div class="benefits-item">
+                    <img src="https://via.placeholder.com/100" alt="Tenant Screening">
+                    <h3 id="benefits-2-title">Rigorous Tenant Screening</h3>
+                    <p id="benefits-2-text">Comprehensive background checks and verification process</p>
                 </div>
-                <div class="value-item">
-                    <h3 id="value-item-3-title">Trusted Partner</h3>
-                    <p id="value-item-3-text">Your property is in safe hands with our experienced team</p>
+                <div class="benefits-item">
+                    <img src="https://via.placeholder.com/100" alt="Maintenance">
+                    <h3 id="benefits-3-title">Proactive Maintenance</h3>
+                    <p id="benefits-3-text">Regular property inspections and swift issue resolution</p>
                 </div>
             </div>
         </div>
@@ -189,9 +262,9 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <h2 id="contact-title">Ready to Partner With Us?</h2>
+            <h2 id="contact-title">Ready to Maximize Your Property's Potential?</h2>
             <div class="contact-info">
-                <p id="contact-info">Call us today to discuss your property</p>
+                <p id="contact-info">Discuss your property management needs today</p>
                 <div class="phone-number" id="phone-number">+381 XX XXX XXXX</div>
                 <p id="contact-hours">Business Hours: Monday - Friday, 9:00 - 18:00</p>
             </div>
@@ -212,8 +285,8 @@
     <script>
         const translations = {
             en: {
-                "hero-title": "Find Tenants, Rent Your Property in Belgrade",
-                "hero-text": "Professional rental services for property owners - No commission, long-term rentals",
+                "hero-title": "Maximize Your Property's Potential in Belgrade",
+                "hero-text": "Professional property management services for discerning property owners",
                 "cta-button": "List Your Property",
                 "telegram-button": "Contact on Telegram",
                 "how-works-title": "How We Help You Rent Your Property",
@@ -223,15 +296,15 @@
                 "how-works-2-text": "Transparent pricing with no additional commissions or hidden costs",
                 "how-works-3-title": "Professional Management",
                 "how-works-3-text": "Complete property management from tenant screening to maintenance",
-                "value-title": "Why Choose Belgraderent?",
-                "value-item-1-title": "Market Expertise",
-                "value-item-1-text": "Deep understanding of Belgrade's premium real estate market",
-                "value-item-2-title": "Professional Management",
-                "value-item-2-text": "Complete property management services tailored to your needs",
-                "value-item-3-title": "Trusted Partner",
-                "value-item-3-text": "Your property is in safe hands with our experienced team",
-                "contact-title": "Ready to Partner With Us?",
-                "contact-info": "Call us today to discuss your property",
+                "benefits-title": "Why Property Owners Trust Us",
+                "benefits-1-title": "Local Market Expertise",
+                "benefits-1-text": "In-depth understanding of Belgrade's real estate dynamics",
+                "benefits-2-title": "Rigorous Tenant Screening",
+                "benefits-2-text": "Comprehensive background checks and verification process",
+                "benefits-3-title": "Proactive Maintenance",
+                "benefits-3-text": "Regular property inspections and swift issue resolution",
+                "contact-title": "Ready to Maximize Your Property's Potential?",
+                "contact-info": "Discuss your property management needs today",
                 "phone-number": "+381 XX XXX XXXX",
                 "contact-hours": "Business Hours: Monday - Friday, 9:00 - 18:00",
                 "email-button": "Email Us",
@@ -239,8 +312,8 @@
                 "footer-text": "&copy; 2024 Belgraderent. All rights reserved."
             },
             sr: {
-                "hero-title": "Pronađite Stanare, Izdajte Nekretninu u Beogradu",
-                "hero-text": "Profesionalne usluge izdavanja za vlasnike nekretnina - Bez provizije, dugoročni najam",
+                "hero-title": "Maksimizujte Potencijal Vaše Nekretnine u Beogradu",
+                "hero-text": "Profesionalne usluge upravljanja nekretninama za vlasnike sa visokim zahtevima",
                 "cta-button": "Oglasite Vašu Nekretninu",
                 "telegram-button": "Kontaktirajte na Telegramu",
                 "how-works-title": "Kako Vam Pomažemo da Izdate Nekretninu",
@@ -250,15 +323,15 @@
                 "how-works-2-text": "Transparentno cenovnik bez dodatnih provizija ili skrivenih troškova",
                 "how-works-3-title": "Profesionalno Upravljanje",
                 "how-works-3-text": "Kompletno upravljanje nekretninom od provere stanara do održavanja",
-                "value-title": "Zašto Odabrati Belgraderent?",
-                "value-item-1-title": "Tržišna Stručnost",
-                "value-item-1-text": "Duboko razumevanje premium tržišta nekretnina u Beogradu",
-                "value-item-2-title": "Profesionalno Upravljanje",
-                "value-item-2-text": "Kompletne usluge upravljanja nekretninama prilagođene vašim potrebama",
-                "value-item-3-title": "Pouzdan Partner",
-                "value-item-3-text": "Vaša nekretnina je u sigurnim rukama našeg iskusnog tima",
-                "contact-title": "Spremni za Saradnju?",
-                "contact-info": "Pozovite nas danas da razgovaramo o vašoj nekretnini",
+                "benefits-title": "Zašto Nam Vlasnici Nekretnina Veruju",
+                "benefits-1-title": "Lokalno Tržišno Znanje",
+                "benefits-1-text": "Duboko razumevanje dinamike nekretnina u Beogradu",
+                "benefits-2-title": "Temeljita Provera Stanara",
+                "benefits-2-text": "Sveobuhvatne provere pozadine i verifikacija",
+                "benefits-3-title": "Proaktivno Održavanje",
+                "benefits-3-text": "Redovni pregledi nekretnina i brzo rešavanje problema",
+                "contact-title": "Spremni da Maksimizujete Potencijal Vaše Nekretnine?",
+                "contact-info": "Razgovarajte o potrebama upravljanja nekretninom danas",
                 "phone-number": "+381 XX XXX XXXX",
                 "contact-hours": "Radno Vreme: Ponedeljak - Petak, 9:00 - 18:00",
                 "email-button": "Pošaljite nam e-mail",
