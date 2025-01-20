@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        const updateFavicon = () => {
+            const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const favicon = document.getElementById("favicon");
+
+            if (darkMode) {
+                favicon.href = "/favicon-dark.png"; // Path to your dark mode favicon
+            } else {
+                favicon.href = "/favicon-light.png"; // Path to your light mode favicon
+            }
+        };
+
+        // Run on page load
+        updateFavicon();
+
+        // Update on theme change
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
+    </script>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
