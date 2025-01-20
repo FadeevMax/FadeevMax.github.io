@@ -5,31 +5,34 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <meta name="apple-mobile-web-app-title" content="Belgraderent" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belgraderent - Comprehensive Property Management Solutions</title>
-    <meta name="description" content="Iznajmiti stan Rusima, Izdavanje stanova u Beogradu, pronalaženje pouzdanih stanara. Profesionalno upravljanje nekretninama bez provizije. Usluge za vlasnike nekretnina u Beogradu, Srbiji i za međunarodne klijente.">
-    <meta name="keywords" content="Iznajmiti stan Rusima, izdavanje stanova Beograd, iznajmljivanje nekretnina Srbija, stanovi za izdavanje, izdavanje stanova bez provizije, upravljanje nekretninama Beograd, dugoročni najam, rent apartment Belgrade, найти жильцов Белград, сдать квартиру в Белграде, property management Serbia, long-term rental Belgrade">
+    <meta name="description" content="Iznajmite stan Rusima u Beogradu. Profesionalno upravljanje nekretninama bez provizije." />
+    <meta name="keywords" content="Iznajmiti stan Rusima, iznajmljivanje stanova Beograd, upravljanje nekretninama Beograd" />
     <style>
         :root {
-            --primary-color: #017c8b;
-            --secondary-color: #6ab6b7;
-            --text-color: #37474f;
-            --background-color: #f4f7fa;
+            --primary-color: #000000;
+            --secondary-color: #f1f1f1;
+            --accent-color: #017c8b;
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --gray: #f7f7f7;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Montserrat', sans-serif;
+            font-family: 'Helvetica Neue', sans-serif;
         }
 
         body {
-            background-color: #ffffff;
+            background-color: var(--background-color);
             color: var(--text-color);
+            font-size: 16px;
             line-height: 1.6;
         }
 
@@ -40,29 +43,30 @@
         }
 
         header {
-            background-color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: var(--background-color);
+            padding: 40px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            width: 180px;
+            width: 200px;
+            height: auto;
         }
 
         .language-selector {
             display: flex;
-            gap: 10px;
+            gap: 15px;
         }
 
         .language-button {
             padding: 10px 20px;
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--accent-color);
+            color: var(--background-color);
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -72,112 +76,76 @@
         }
 
         .hero {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3');
+            background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3');
             background-size: cover;
             background-position: center;
-            padding: 120px 0;
+            padding: 120px 20px;
             text-align: center;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
+            font-size: 3rem;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--primary-color);
+            padding: 15px 40px;
+            background-color: var(--accent-color);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            border-radius: 50px;
             margin: 10px;
+            transition: background-color 0.3s ease;
         }
 
         .cta-button:hover {
             background-color: var(--secondary-color);
         }
 
-        .cx-how-it-works {
+        .cx-how-it-works, .benefits, .contact {
             padding: 80px 0;
             text-align: center;
-            background-color: var(--background-color);
         }
 
-        .cx-how-it-works h2 {
-            margin-bottom: 50px;
-            color: var(--primary-color);
+        .section-title {
             font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-weight: 700;
         }
 
-        .cx-how-it-works ul {
+        .cx-how-it-works ul, .benefits-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            list-style: none;
+            gap: 30px;
         }
 
-        .cx-how-it-works ul li {
+        .cx-how-it-works ul li, .benefits-item {
             width: 30%;
-            padding: 30px;
-            margin: 15px;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: var(--gray);
+            padding: 20px;
             border-radius: 10px;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
 
-        .cx-how-it-works ul li:hover {
+        .cx-how-it-works ul li:hover, .benefits-item:hover {
             transform: translateY(-10px);
         }
 
-        .cx-how-it-works ul li h3 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-
-        .benefits {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .benefits h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-            font-size: 2.5rem;
-        }
-
-        .benefits-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .benefits-item {
-            width: 30%;
-            padding: 20px;
-            text-align: center;
-        }
-
         .benefits-item img {
-            max-width: 100px;
+            width: 80px;
+            height: 80px;
             margin-bottom: 20px;
-        }
-
-        .contact {
-            background-color: var(--background-color);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .contact h2 {
-            color: var(--primary-color);
-            margin-bottom: 30px;
         }
 
         footer {
@@ -187,20 +155,23 @@
             text-align: center;
         }
 
-        .social-links {
+        footer .social-links {
             margin-top: 20px;
         }
 
-        .social-links a {
+        footer .social-links a {
             color: white;
+            margin: 0 15px;
             text-decoration: none;
-            margin: 0 10px;
         }
 
         @media (max-width: 768px) {
-            .cx-how-it-works ul li,
-            .benefits-item {
+            .cx-how-it-works ul li, .benefits-item {
                 width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -209,84 +180,70 @@
     <header>
         <img src="Our_logo3.png" alt="Belgraderent Logo" class="logo">
         <div class="language-selector">
-        <a href="form.html" class="cta-button">Contact Us</a>
-
             <button class="language-button" onclick="changeLanguage('en')">English</button>
             <button class="language-button" onclick="changeLanguage('sr')">Srpski</button>
         </div>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <h1 id="hero-title">Maximize Your Property's Potential in Belgrade</h1>
-            <p id="hero-text">Professional property management services for discerning property owners</p>
-            <a href="#contact" class="cta-button" id="cta-button">List Your Property</a>
-            <a href="https://t.me/belgraderent" target="_blank" class="cta-button" id="telegram-button">Contact on Telegram</a>
-        </div>
+        <h1>Maximize Your Property's Potential in Belgrade</h1>
+        <p>Professional property management services for discerning property owners</p>
+        <a href="#contact" class="cta-button">List Your Property</a>
+        <a href="https://t.me/belgraderent" target="_blank" class="cta-button">Contact on Telegram</a>
     </section>
 
     <section class="cx-how-it-works">
-        <div class="container">
-            <h2 id="how-works-title">How We Help You Rent Your Property</h2>
-            <ul>
-                <li>
-                    <h3 id="how-works-1-title">Find Perfect Tenants</h3>
-                    <p id="how-works-1-text">We help you find reliable, long-term tenants quickly and efficiently</p>
-                </li>
-                <li>
-                    <h3 id="how-works-2-title">No Hidden Fees</h3>
-                    <p id="how-works-2-text">Transparent pricing with no additional commissions or hidden costs</p>
-                </li>
-                <li>
-                    <h3 id="how-works-3-title">Professional Management</h3>
-                    <p id="how-works-3-text">Complete property management from tenant screening to maintenance</p>
-                </li>
-            </ul>
-        </div>
+        <h2 class="section-title">How We Help You Rent Your Property</h2>
+        <ul>
+            <li>
+                <h3>Find Perfect Tenants</h3>
+                <p>We help you find reliable, long-term tenants quickly and efficiently</p>
+            </li>
+            <li>
+                <h3>No Hidden Fees</h3>
+                <p>Transparent pricing with no additional commissions or hidden costs</p>
+            </li>
+            <li>
+                <h3>Professional Management</h3>
+                <p>Complete property management from tenant screening to maintenance</p>
+            </li>
+        </ul>
     </section>
 
     <section class="benefits">
-        <div class="container">
-            <h2 id="benefits-title">Why Property Owners Trust Us</h2>
-            <div class="benefits-grid">
-                <div class="benefits-item">
-                    <img src="market-knowledge.png" alt="Market Knowledge">
-                    <h3 id="benefits-1-title">Local Market Expertise</h3>
-                    <p id="benefits-1-text">In-depth understanding of Belgrade's real estate dynamics</p>
-                </div>
-                <div class="benefits-item">
-                    <img src="tenant-screening.png" alt="Tenant Screening">
-                    <h3 id="benefits-2-title">Rigorous Tenant Screening</h3>
-                    <p id="benefits-2-text">Comprehensive background checks and verification process</p>
-                </div>
-                <div class="benefits-item">
-                    <img src="Support.png" alt="Maintenance">
-                    <h3 id="benefits-3-title">Proactive Maintenance</h3>
-                    <p id="benefits-3-text">Regular property inspections and swift issue resolution</p>
-                </div>
+        <h2 class="section-title">Why Property Owners Trust Us</h2>
+        <div class="benefits-grid">
+            <div class="benefits-item">
+                <img src="market-knowledge.png" alt="Market Knowledge">
+                <h3>Local Market Expertise</h3>
+                <p>In-depth understanding of Belgrade's real estate dynamics</p>
+            </div>
+            <div class="benefits-item">
+                <img src="tenant-screening.png" alt="Tenant Screening">
+                <h3>Rigorous Tenant Screening</h3>
+                <p>Comprehensive background checks and verification process</p>
+            </div>
+            <div class="benefits-item">
+                <img src="Support.png" alt="Support">
+                <h3>Proactive Maintenance</h3>
+                <p>Regular property inspections and swift issue resolution</p>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
-        <div class="container">
-            <h2 id="contact-title">Ready to Maximize Your Property's Potential?</h2>
-            <div class="contact-info">
-                <p id="contact-info">Discuss your property management needs today</p>
-                <div class="phone-number" id="phone-number">+381 601 57 38 57</div>
-                <p id="contact-hours">Business Hours: We work 24/7 for you</p>
-            </div>
-            <a href="mailto:teambelgraderent@gmail.com" class="cta-button" id="email-button">Email Us</a>
-            <a href="https://t.me/belgraderent" target="_blank" class="cta-button" id="telegram-contact">Contact on Telegram</a>
-        </div>
+        <h2 class="section-title">Ready to Maximize Your Property's Potential?</h2>
+        <p>Discuss your property management needs today</p>
+        <p class="phone-number">+381 601 57 38 57</p>
+        <p>Business Hours: We work 24/7 for you</p>
+        <a href="mailto:teambelgraderent@gmail.com" class="cta-button">Email Us</a>
+        <a href="https://t.me/belgraderent" target="_blank" class="cta-button">Contact on Telegram</a>
     </section>
 
     <footer>
-        <div class="container">
-            <p id="footer-text">&copy; 2025 Belgraderent. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://t.me/belgraderent" target="_blank">Telegram</a>
-            </div>
+        <p>&copy; 2025 Belgraderent. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://t.me/belgraderent" target="_blank">Telegram</a>
         </div>
     </footer>
 
@@ -305,52 +262,53 @@
                 "how-works-3-title": "Professional Management",
                 "how-works-3-text": "Complete property management from tenant screening to maintenance",
                 "benefits-title": "Why Property Owners Trust Us",
-                "benefits-1-title": "Local Market Expertise",
-                "benefits-1-text": "In-depth understanding of Belgrade's real estate dynamics",
-                "benefits-2-title": "Rigorous Tenant Screening",
-                "benefits-2-text": "Comprehensive background checks and verification process",
-                "benefits-3-title": "Proactive Maintenance",
-                "benefits-3-text": "Regular property inspections and swift issue resolution",
+                "benefit-1-title": "Local Market Expertise",
+                "benefit-1-text": "In-depth understanding of Belgrade's real estate dynamics",
+                "benefit-2-title": "Rigorous Tenant Screening",
+                "benefit-2-text": "Comprehensive background checks and verification process",
+                "benefit-3-title": "Proactive Maintenance",
+                "benefit-3-text": "Regular property inspections and swift issue resolution",
                 "contact-title": "Ready to Maximize Your Property's Potential?",
-                "contact-info": "Discuss your property management needs today",
+                "contact-text": "Discuss your property management needs today",
                 "phone-number": "+381 601 57 38 57",
-                "contact-hours": "Business Hours: We work 24/7",
-                "email-button": "Email Us",
-                "telegram-contact": "Contact on Telegram",
-                "footer-text": "&copy; 2025 Belgraderent. All rights reserved."
+                "email-text": "Email Us",
+                "social-links-title": "Telegram"
             },
             sr: {
-                "hero-title": "Maksimizujte Potencijal Vaše Nekretnine u Beogradu",
-                "hero-text": "Profesionalne usluge upravljanja nekretninama za vlasnike sa visokim zahtevima",
-                "cta-button": "Oglasite Vašu Nekretninu",
-                "telegram-button": "Kontaktirajte na Telegramu",
-                "how-works-title": "Kako Vam Pomažemo da Izdate Nekretninu",
-                "how-works-1-title": "Pronalazak Idealnih Stanara",
-                "how-works-1-text": "Pomažemo vam da brzo i efikasno pronađete pouzdane, dugoročne stanare",
-                "how-works-2-title": "Bez Skrivenih Troškova",
-                "how-works-2-text": "Transparentno cenovnik bez dodatnih provizija ili skrivenih troškova",
-                "how-works-3-title": "Profesionalno Upravljanje",
-                "how-works-3-text": "Kompletno upravljanje nekretninom od provere stanara do održavanja",
-                "benefits-title": "Zašto Nam Vlasnici Nekretnina Veruju",
-                "benefits-1-title": "Lokalno Tržišno Znanje",
-                "benefits-1-text": "Duboko razumevanje dinamike nekretnina u Beogradu",
-                "benefits-2-title": "Temeljita Provera Stanara",
-                "benefits-2-text": "Sveobuhvatne provere pozadine i verifikacija",
-                "benefits-3-title": "Proaktivno Održavanje",
-                "benefits-3-text": "Redovni pregledi nekretnina i brzo rešavanje problema",
-                "contact-title": "Spremni da Maksimizujete Potencijal Vaše Nekretnine?",
-                "contact-info": "Razgovarajte o potrebama upravljanja nekretninom danas",
+                "hero-title": "Maknite svoj objekat uspešnim u Beogradu",
+                "hero-text": "Profesionalne usluge upravljanja nekretninama za zahtevne vlasnike",
+                "cta-button": "Iznajmite svoj objekat",
+                "telegram-button": "Kontaktirajte nas preko Telegrama",
+                "how-works-title": "Kako pomažemo da iznajmite svoj objekat",
+                "how-works-1-title": "Pronađite savršene stanare",
+                "how-works-1-text": "Pomažemo da brzo i efikasno pronađete pouzdane dugoročne stanare",
+                "how-works-2-title": "Bez skrivenih troškova",
+                "how-works-2-text": "Transparentna cena bez dodatnih provizija i skrivenih troškova",
+                "how-works-3-title": "Profesionalno upravljanje",
+                "how-works-3-text": "Kompletno upravljanje nekretninama od provere stanara do održavanja",
+                "benefits-title": "Zašto nas vlasnici nekretnina biraju",
+                "benefit-1-title": "Poznavanje tržišta",
+                "benefit-1-text": "Duboko razumevanje tržišta nekretnina u Beogradu",
+                "benefit-2-title": "Provereni stanari",
+                "benefit-2-text": "Detaljna provera i verifikacija stanara",
+                "benefit-3-title": "Proaktivno održavanje",
+                "benefit-3-text": "Redovne inspekcije i brzo rešavanje problema",
+                "contact-title": "Spremni da maksimizujete svoj objekat?",
+                "contact-text": "Kontaktirajte nas za sve vaše potrebe vezane za upravljanje nekretninama",
                 "phone-number": "+381 601 57 38 57",
-                "contact-hours": "Radno Vreme: 24/7",
-                "email-button": "Pošaljite nam e-mail",
-                "telegram-contact": "Kontaktirajte na Telegramu",
-                "footer-text": "&copy; 2025 Belgraderent. Sva prava zadržana."
+                "email-text": "Pošaljite email",
+                "social-links-title": "Telegram"
             }
         };
 
         function changeLanguage(lang) {
-            Object.keys(translations[lang]).forEach(id => {
-                document.getElementById(id).innerHTML = translations[lang][id];
+            const elements = document.querySelectorAll("[data-translate]");
+            elements.forEach(el => {
+                const key = el.getAttribute("data-translate");
+                el.innerText = translations[lang][key];
             });
         }
     </script>
+</body>
+</html>
+
