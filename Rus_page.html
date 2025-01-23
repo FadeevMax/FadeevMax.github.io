@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
+    <script>
+        const updateFavicon = () => {
+            const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const faviconLink = document.querySelector("link[rel~='icon']");
+            
+            if (darkMode) {
+                faviconLink.href = "favicon_light.ico";
+            } else {
+                faviconLink.href = "favicon.ico";
+            }
+        };
+
+        // Run on page load
+        updateFavicon();
+
+        // Update on theme change
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
+    </script>
     <link rel="icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -13,6 +31,18 @@
     <title>Belgraderents | Iznajmite stan Rusima u Beogradu | izdajte svoju nekretninu</title>
     <meta name="description" content="Lako izdajte svoju nekretninu | Izdavanje stanova Beograd Srbija" />
     <meta name="keywords" content="Iznajmiti stan Rusima, izdavanje stanova Beograd, iznajmljivanje nekretnina Srbija, stanovi za izdavanje, izdavanje stanova bez provizije, upravljanje nekretninama Beograd, dugoročni najam, rent apartment Belgrade, найти жильцов Белград, сдать квартиру в Белграде, property management Serbia, long-term rental Belgrade" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.belgraderents.com/">
+    <meta property="og:title" content="Belgraderent: Izdavanje Stanova Rusima u Beogradu">
+    <meta property="og:description" content="Profesionalno izdavanje stanova Rusima. Kompletan servis upravljanja nekretninama.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://www.belgraderents.com/">
+    <meta property="twitter:title" content="Belgraderent: Izdavanje Stanova Rusima u Beogradu">
+    <meta property="twitter:description" content="Profesionalno izdavanje stanova Rusima. Kompletan servis upravljanja nekretninama."
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
