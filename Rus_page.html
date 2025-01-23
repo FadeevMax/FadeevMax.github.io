@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Belgraderent" />
+    <link rel="manifest" href="site.webmanifest" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belgraderent | Izdavanje stanova Rusima u Beogradu</title>
+    <title>Belgraderents | Iznajmite stan Rusima u Beogradu | izdajte svoju nekretninu</title>
+    <meta name="description" content="Lako izdajte svoju nekretninu | Izdavanje stanova Beograd Srbija" />
+    <meta name="keywords" content="Iznajmiti stan Rusima, izdavanje stanova Beograd, iznajmljivanje nekretnina Srbija, stanovi za izdavanje, izdavanje stanova bez provizije, upravljanje nekretninama Beograd, dugoročni najam, rent apartment Belgrade, найти жильцов Белград, сдать квартиру в Белграде, property management Serbia, long-term rental Belgrade" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #000000;
@@ -91,10 +101,21 @@
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .feature-item:hover {
             transform: translateY(-10px);
+        }
+
+        .feature-item img {
+            max-width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
         footer {
@@ -102,6 +123,14 @@
             color: white;
             padding: 40px 0;
             text-align: center;
+        }
+
+        .section-image {
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
         }
     </style>
     <script>
@@ -175,6 +204,9 @@
 <body>
     <header>
         <img src="Our_logo3.png" alt="Belgraderent Logo" class="logo">
+        <div class="site-title" style="position: absolute; left: 50%; transform: translateX(-50%); font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary-color); font-weight: 700;">
+            Belgraderent
+        </div>
         <div class="language-selector">
             <button class="language-button" onclick="changeLanguage('en')">English</button>
             <button class="language-button" onclick="changeLanguage('sr')">Srpski</button>
@@ -184,6 +216,7 @@
     <section class="section">
         <h1 class="section-title" data-translate="page-title">Izdavanje stanova Rusima - Uticaj na Cene Nekretnina</h1>
         <div class="section-content">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Belgrade Real Estate" class="section-image">
             <p data-translate="intro-text">Sve je veći broj stranih državljana koji odlučuju da se na kraći ili duži vremenski period presele u Srbiju. S obzirom na trenutnu situaciju u svetu, najveći broj tih državljana su Rusi, koji se odlučuju da iznajme ili kupe nekretnine na teritoriji naše zemlje. Prema javno objavljenim informacijama u Srbiji je trenutno između 30.000 i 50.000 Rusa.</p>
         </div>
     </section>
@@ -191,28 +224,48 @@
     <section class="section">
         <h2 class="section-title" data-translate="market-impact-title">Kako su Rusi uticali na cenu izdavanja stanova?</h2>
         <div class="section-content">
-            <p data-translate="market-impact-text">Iako je cena izdavanja stanova u konstantnom porastu poslednjih nekoliko godina, ovaj trend je posebno izražen od početka 2022. godine usled inflacije. Kako je sve veća tražnja za iznajmljivanjem stanova i većinu tražnje čine upravo Rusi, a ponuda je ostala nepromenjena, cene izdavanja su vrtoglavo skočile.</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09c7b2f2b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Real Estate Market Trends">
+                    <p data-translate="market-impact-text">Iako je cena izdavanja stanova u konstantnom porastu poslednjih nekoliko godina, ovaj trend je posebno izražen od početka 2022. godine usled inflacije. Kako je sve veća tražnja za iznajmljivanjem stanova i većinu tražnje čine upravo Rusi, a ponuda je ostala nepromenjena, cene izdavanja su vrtoglavo skočile.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="section">
         <h2 class="section-title" data-translate="rental-preferences-title">Kakve stanove traže Rusi?</h2>
         <div class="section-content">
-            <p data-translate="rental-preferences-text">Rusi se pretežno odlučuju za iznajmljivanje stanova, pre nego za kupovinu nekretnina, a usled njihove veće platežne sposobnosti i hitne potrebe za mestom za stanovanje, za njega su spremni da daju više novca nego što je to uobičajeno u Srbiji.</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1560185893-d9f4a5be4d6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Modern Apartment Interior">
+                    <p data-translate="rental-preferences-text">Rusi se pretežno odlučuju za iznajmljivanje stanova, pre nego za kupovinu nekretnina, a usled njihove veće platežne sposobnosti i hitne potrebe za mestom za stanovanje, za njega su spremni da daju više novca nego što je to uobičajeno u Srbiji.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="section">
         <h2 class="section-title" data-translate="preferred-cities-title">Najpoželjniji Gradovi</h2>
         <div class="section-content">
-            <p data-translate="preferred-cities-text">Gradovi za koje se najviše odlučuju su definitivno Beograd i Novi Sad, a to su uglavnom stanovi na atraktivnim lokacijama u gradu. Kada je u pitanju Beograd, kao idealna lokacija za život Rusa se mogu izdvojiti bolje opremljeni stanovi na Vračaru, u samom centru grada i na Dedinju, kao i stanovi u blizini ruskih škola koje traže oni koji imaju decu.</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1581339267271-8135bd8184c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Belgrade City View">
+                    <p data-translate="preferred-cities-text">Gradovi za koje se najviše odlučuju su definitivno Beograd i Novi Sad, a to su uglavnom stanovi na atraktivnim lokacijama u gradu. Kada je u pitanju Beograd, kao idealna lokacija za život Rusa se mogu izdvojiti bolje opremljeni stanovi na Vračaru, u samom centru grada i na Dedinju, kao i stanovi u blizini ruskih škola koje traže oni koji imaju decu.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="section">
         <h2 class="section-title" data-translate="price-increase-title">Porast Cena</h2>
         <div class="section-content">
-            <p data-translate="price-increase-text">Upravo iz navedenih razloga, prosečne cene izdavanja stanova u ovim gradovima su u periodu od januara ove godine do danas porasle u proseku za 150 evra.</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="https://images.unsplash.com/photo-1634406830916-9856fe854ffe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Real Estate Price Graph">
+                    <p data-translate="price-increase-text">Upravo iz navedenih razloga, prosečne cene izdavanja stanova u ovim gradovima su u periodu od januara ove godine do danas porasle u proseku za 150 evra.</p>
+                </div>
+            </div>
         </div>
     </section>
 
