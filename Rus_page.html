@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belgraderent | Izdavanje stanova Rusima u Beogradu</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #f1f1f1;
+            --accent-color: #017c8b;
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --gray: #f7f7f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--background-color);
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-button {
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .language-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            background-color: var(--gray);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+    </style>
+    <script>
+        const translations = {
+            sr: {
+                "page-title": "Izdavanje stanova Rusima - Uticaj na Cene Nekretnina",
+                "intro-text": "Sve je veći broj stranih državljana koji odlučuju da se na kraći ili duži vremenski period presele u Srbiju. S obzirom na trenutnu situaciju u svetu, najveći broj tih državljana su Rusi, koji se odlučuju da iznajme ili kupe nekretnine na teritoriji naše zemlje. Prema javno objavljenim informacijama u Srbiji je trenutno između 30.000 i 50.000 Rusa.",
+                "market-impact-title": "Kako su Rusi uticali na cenu izdavanja stanova?",
+                "market-impact-text": "Iako je cena izdavanja stanova u konstantnom porastu poslednjih nekoliko godina, ovaj trend je posebno izražen od početka 2022. godine usled inflacije. Kako je sve veća tražnja za iznajmljivanjem stanova i većinu tražnje čine upravo Rusi, a ponuda je ostala nepromenjena, cene izdavanja su vrtoglavo skočile.",
+                "rental-preferences-title": "Kakve stanove traže Rusi?",
+                "rental-preferences-text": "Rusi se pretežno odlučuju za iznajmljivanje stanova, pre nego za kupovinu nekretnina, a usled njihove veće platežne sposobnosti i hitne potrebe za mestom za stanovanje, za njega su spremni da daju više novca nego što je to uobičajeno u Srbiji.",
+                "preferred-cities-title": "Najpoželjniji Gradovi",
+                "preferred-cities-text": "Gradovi za koje se najviše odlučuju su definitivno Beograd i Novi Sad, a to su uglavnom stanovi na atraktivnim lokacijama u gradu. Kada je u pitanju Beograd, kao idealna lokacija za život Rusa se mogu izdvojiti bolje opremljeni stanovi na Vračaru, u samom centru grada i na Dedinju, kao i stanovi u blizini ruskih škola koje traže oni koji imaju decu.",
+                "price-increase-title": "Porast Cena",
+                "price-increase-text": "Upravo iz navedenih razloga, prosečne cene izdavanja stanova u ovim gradovima su u periodu od januara ove godine do danas porasle u proseku za 150 evra.",
+                "rental-procedure-title": "Procedura Iznajmljivanja Stanova Rusima",
+                "rental-procedure-text": "Prilikom izdavanja stanova Rusima, moraju se poštovati određena pravila i zakoni naše zemlje. Proces i obaveze tokom izdavanja stanova isti su za sve strance, pa tako i za Ruse.",
+                "rental-contract-title": "Ugovor o Zakupu Stana",
+                "rental-contract-text": "Kao i kod iznajmljivanja stana našim državljanima, prilikom izdavanja stana Rusima i ostalim strancima, neophodno je sa njima zaključiti ugovor o zakupu stana kojim se štite istovremeno stanodavac i stanar.",
+                "white-card-title": "Obavezna Prijava Boravišta - Beli Karton",
+                "white-card-text": "Rusi, kao i ostali stranci u našoj zemlji imaju obaveze prilikom dolaska u zemlju koje moraju ispuniti. Zakonska obaveza vlasnika stana (stanodavca) je da u roku od 24 časa od izdavanja smeštaja zajedno sa ruskim državljaninom ode u Policijsku stanicu koja je nadležna za opštinu na kojoj se stan koji se izdaje nalazi.",
+                "required-documents-title": "Potrebni Dokumenti za Prijavu Boravišta",
+                "required-documents-text": "- Dokument o prijavi boravišta (Beli karton) koji popunjava vlasnik stana\n- Pasoš stranog državljanina\n- Lična karta vlasnika stana na čiju se adresu prijavljuje stranac\n- Vlasnički list stana - dokaz o vlasništvu nad stanom",
+                "stay-types-title": "Vrste Boravka",
+                "stay-types-text": "- Kratkotrajan boravak - do 90 dana bez vize\n- Viza za duži boravak - između 90 i 180 dana\n- Privremeni boravak - dozvola boravka duže od 90 dana\n- Stalni boravak - dozvola za stalno nastanjenje",
+                "tax-title": "Porez na Izdavanje Stana",
+                "tax-text": "Zakon o stanovanju propisuje da stanodavac plaća porez na prihod od izdavanja stana, koji iznosi 20%. Kazne za neprijavljivanje prihoda mogu biti veoma visoke, od 5.000 do 150.000 dinara, a u nekim slučajevima čak i zatvorske.",
+                "conclusion-title": "Zašto Izdavati Stan Rusima?",
+                "conclusion-text": "Trenutno stanje na tržištu nekretnina pruža odličnu priliku za vlasnike stanova. Veliki broj Rusa traži smeštaj, a vi možete iskoristiti ovu šansu za profitabilno izdavanje svoje nekretnine."
+            },
+            en: {
+                "page-title": "Renting Apartments to Russians - Impact on Real Estate Prices",
+                "intro-text": "An increasing number of foreign citizens are deciding to move to Serbia for short or long-term periods. Given the current global situation, most of these citizens are Russians who choose to rent or buy properties in our country. According to publicly available information, there are currently between 30,000 and 50,000 Russians in Serbia.",
+                "market-impact-title": "How Have Russians Influenced Rental Prices?",
+                "market-impact-text": "Although apartment rental prices have been steadily rising in recent years, this trend has been particularly pronounced since the beginning of 2022 due to inflation. With increasing demand for rental apartments, primarily driven by Russians, and unchanged supply, rental prices have skyrocketed.",
+                "rental-preferences-title": "What Kind of Apartments Do Russians Seek?",
+                "rental-preferences-text": "Russians predominantly opt for renting apartments rather than purchasing properties. Due to their higher purchasing power and urgent need for housing, they are willing to pay more than is typically common in Serbia.",
+                "preferred-cities-title": "Most Desirable Cities",
+                "preferred-cities-text": "The cities they most often choose are definitely Belgrade and Novi Sad, primarily apartments in attractive city locations. In Belgrade, ideal locations for Russians include well-equipped apartments in Vračar, city center, Dedinje, and apartments near Russian schools for those with children.",
+                "price-increase-title": "Price Increase",
+                "price-increase-text": "For these reasons, average apartment rental prices in these cities have increased by an average of 150 euros from January until today.",
+                "rental-procedure-title": "Rental Procedure for Russians",
+                "rental-procedure-text": "When renting apartments to Russians, certain rules and laws of our country must be respected. The process and obligations during apartment rental are the same for all foreigners, including Russians.",
+                "rental-contract-title": "Rental Agreement",
+                "rental-contract-text": "As with renting apartments to our citizens, when renting to Russians and other foreigners, it is necessary to conclude a rental agreement that simultaneously protects both the landlord and the tenant.",
+                "white-card-title": "Mandatory Residence Registration - White Card",
+                "white-card-text": "Russians, like other foreigners in our country, have obligations upon entering the country. The legal obligation of the apartment owner (landlord) is to go to the Police Station responsible for the municipality where the apartment is located within 24 hours of providing accommodation.",
+                "required-documents-title": "Required Documents for Residence Registration",
+                "required-documents-text": "- Residence registration document (White Card) filled out by the property owner\n- Passport of the foreign citizen\n- ID card of the property owner at whose address the foreigner is registering\n- Property ownership document",
+                "stay-types-title": "Types of Stay",
+                "stay-types-text": "- Short-term stay - up to 90 days without a visa\n- Longer stay visa - between 90 and 180 days\n- Temporary residence - permit to stay longer than 90 days\n- Permanent residence - settlement permit",
+                "tax-title": "Tax on Apartment Rental",
+                "tax-text": "The Housing Law stipulates that the landlord pays a 20% income tax on apartment rental. Penalties for not reporting income can be very high, ranging from 5,000 to 150,000 dinars, and in some cases even imprisonment.",
+                "conclusion-title": "Why Rent to Russians?",
+                "conclusion-text": "The current real estate market provides an excellent opportunity for property owners. A large number of Russians are seeking accommodation, and you can take advantage of this chance for profitable property rental."
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll("[data-translate]");
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="Our_logo3.png" alt="Belgraderent Logo" class="logo">
+        <div class="language-selector">
+            <button class="language-button" onclick="changeLanguage('en')">English</button>
+            <button class="language-button" onclick="changeLanguage('sr')">Srpski</button>
+        </div>
+    </header>
+
+    <section class="section">
+        <h1 class="section-title" data-translate="page-title">Izdavanje stanova Rusima - Uticaj na Cene Nekretnina</h1>
+        <div class="section-content">
+            <p data-translate="intro-text">Sve je veći broj stranih državljana koji odlučuju da se na kraći ili duži vremenski period presele u Srbiju. S obzirom na trenutnu situaciju u svetu, najveći broj tih državljana su Rusi, koji se odlučuju da iznajme ili kupe nekretnine na teritoriji naše zemlje. Prema javno objavljenim informacijama u Srbiji je trenutno između 30.000 i 50.000 Rusa.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="market-impact-title">Kako su Rusi uticali na cenu izdavanja stanova?</h2>
+        <div class="section-content">
+            <p data-translate="market-impact-text">Iako je cena izdavanja stanova u konstantnom porastu poslednjih nekoliko godina, ovaj trend je posebno izražen od početka 2022. godine usled inflacije. Kako je sve veća tražnja za iznajmljivanjem stanova i većinu tražnje čine upravo Rusi, a ponuda je ostala nepromenjena, cene izdavanja su vrtoglavo skočile.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="rental-preferences-title">Kakve stanove traže Rusi?</h2>
+        <div class="section-content">
+            <p data-translate="rental-preferences-text">Rusi se pretežno odlučuju za iznajmljivanje stanova, pre nego za kupovinu nekretnina, a usled njihove veće platežne sposobnosti i hitne potrebe za mestom za stanovanje, za njega su spremni da daju više novca nego što je to uobičajeno u Srbiji.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="preferred-cities-title">Najpoželjniji Gradovi</h2>
+        <div class="section-content">
+            <p data-translate="preferred-cities-text">Gradovi za koje se najviše odlučuju su definitivno Beograd i Novi Sad, a to su uglavnom stanovi na atraktivnim lokacijama u gradu. Kada je u pitanju Beograd, kao idealna lokacija za život Rusa se mogu izdvojiti bolje opremljeni stanovi na Vračaru, u samom centru grada i na Dedinju, kao i stanovi u blizini ruskih škola koje traže oni koji imaju decu.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="price-increase-title">Porast Cena</h2>
+        <div class="section-content">
+            <p data-translate="price-increase-text">Upravo iz navedenih razloga, prosečne cene izdavanja stanova u ovim gradovima su u periodu od januara ove godine do danas porasle u proseku za 150 evra.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="rental-procedure-title">Procedura Iznajmljivanja Stanova Rusima</h2>
+        <div class="section-content">
+            <p data-translate="rental-procedure-text">Prilikom izdavanja stanova Rusima, moraju se poštovati određena pravila i zakoni naše zemlje. Proces i obaveze tokom izdavanja stanova isti su za sve strance, pa tako i za Ruse.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="rental-contract-title">Ugovor o Zakupu Stana</h2>
+        <div class="section-content">
+            <p data-translate="rental-contract-text">Kao i kod iznajmljivanja stana našim državljanima, prilikom izdavanja stana Rusima i ostalim strancima, neophodno je sa njima zaključiti ugovor o zakupu stana kojim se štite istovremeno stanodavac i stanar.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="white-card-title">Obavezna Prijava Boravišta - Beli Karton</h2>
+        <div class="section-content">
+            <p data-translate="white-card-text">Rusi, kao i ostali stranci u našoj zemlji imaju obaveze prilikom dolaska u zemlju koje moraju ispuniti. Zakonska obaveza vlasnika stana (stanodavca) je da u roku od 24 časa od izdavanja smeštaja zajedno sa ruskim državljaninom ode u Policijsku stanicu koja je nadležna za opštinu na kojoj se stan koji se izdaje nalazi.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="required-documents-title">Potrebni Dokumenti za Prijavu Boravišta</h2>
+        <div class="section-content">
+            <pre data-translate="required-documents-text">- Dokument o prijavi boravišta (Beli karton) koji popunjava vlasnik stana
+- Pasoš stranog državljanina
+- Lična karta vlasnika stana na čiju se adresu prijavljuje stranac
+- Vlasnički list stana - dokaz o vlasništvu nad stanom</pre>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="stay-types-title">Vrste Boravka</h2>
+        <div class="section-content">
+            <pre data-translate="stay-types-text">- Kratkotrajan boravak - do 90 dana bez vize
+- Viza za duži boravak - između 90 i 180 dana
+- Privremeni boravak - dozvola boravka duže od 90 dana
+- Stalni boravak - dozvola za stalno nastanjenje</pre>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="tax-title">Porez na Izdavanje Stana</h2>
+        <div class="section-content">
+            <p data-translate="tax-text">Zakon o stanovanju propisuje da stanodavac plaća porez na prihod od izdavanja stana, koji iznosi 20%. Kazne za neprijavljivanje prihoda mogu biti veoma visoke, od 5.000 do 150.000 dinara, a u nekim slučajevima čak i zatvorske.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="conclusion-title">Zašto Izdavati Stan Rusima?</h2>
+        <div class="section-content">
+            <p data-translate="conclusion-text">Trenutno stanje na tržištu nekretnina pruža odličnu priliku za vlasnike stanova. Veliki broj Rusa traži smeštaj, a vi možete iskoristiti ovu šansu za profitabilno izdavanje svoje nekretnine.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title" data-translate="contact-title">Kontaktirajte Nas</h2>
+        <div class="section-content">
+            <p data-translate="contact-intro">Spremni smo da vam pomognemo na svakom koraku zakupa i uređenja u Srbiji:</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3 data-translate="telegram-title">Telegram</h3>
+                    <a href="https://t.me/belgraderent" target="_blank" class="language-button">Kontakt</a>
+                </div>
+                <div class="feature-item">
+                    <h3 data-translate="email-title">Elektronska Pošta</h3>
+                    <a href="mailto:teambelgraderent@gmail.com" class="language-button">Email</a>
+                </div>
+                <div class="feature-item">
+                    <h3 data-translate="phone-title">Telefon</h3>
+                    <p>+381 601 57 38 57</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Belgraderent. Sva prava zadržana.</p>
+    </footer>
+
+    <script>
+        // Set initial language to Serbian
+        changeLanguage('sr');
+    </script>
+</body>
+</html>
