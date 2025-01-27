@@ -195,13 +195,51 @@
         }
 
         @media (max-width: 768px) {
-            .cx-how-it-works ul li, .benefits-item {
-                width: 100%;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
+        header {
+            flex-direction: column;
+            padding: 20px 0;
+        }
+    
+        .site-title {
+            order: -1;
+            margin: 15px 0;
+            font-size: 2rem;
+            position: static;
+            transform: none;
+            text-align: center;
+        }
+    
+        .logo {
+            width: 150px;
+        }
+    
+        .language-selector {
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+    
+        .language-button {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            margin: 5px;
+        }
+    }
+    
+    /* Modify existing header styles */
+    header {
+        position: relative;
+        padding: 30px 0;
+        flex-wrap: wrap;
+    }
+    
+    .site-title {
+        font-size: 2rem;
+        margin: 0 15px;
+        position: static;
+        transform: none;
+        order: 1;
+    }
         }
     </style>
 </head>
