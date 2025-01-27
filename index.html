@@ -50,60 +50,79 @@
             --background-color: #ffffff;
             --gray: #f7f7f7;
         }
-
+    
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Helvetica Neue', sans-serif;
         }
-
+    
         body {
             background-color: var(--background-color);
             color: var(--text-color);
             font-size: 16px;
             line-height: 1.6;
         }
-
+    
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
+    
         header {
             background-color: var(--background-color);
-            padding: 40px 0;
+            padding: 20px 0;
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: center;
+            gap: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
-
+    
         .logo {
             width: 200px;
             height: auto;
+            order: 1;
         }
-
+    
+        .site-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            order: 2;
+            text-align: center;
+            margin: 0 15px;
+        }
+    
         .language-selector {
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            order: 3;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-
+    
         .language-button {
-            padding: 10px 20px;
+            padding: 8px 20px;
             background-color: var(--accent-color);
             color: var(--background-color);
             border: none;
             border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
-
+    
         .language-button:hover {
             background-color: var(--secondary-color);
         }
-
+    
         .hero {
             background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3');
             background-size: cover;
@@ -111,19 +130,19 @@
             padding: 120px 20px;
             text-align: center;
             color: white;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-
+    
         .hero h1 {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
-
+    
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
@@ -135,30 +154,30 @@
             margin: 10px;
             transition: background-color 0.3s ease;
         }
-
+    
         .cta-button:hover {
             background-color: var(--secondary-color);
         }
-
+    
         .cx-how-it-works, .benefits, .contact {
             padding: 80px 0;
             text-align: center;
         }
-
+    
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 40px;
             color: var(--primary-color);
             font-weight: 700;
         }
-
+    
         .cx-how-it-works ul, .benefits-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
         }
-
+    
         .cx-how-it-works ul li, .benefits-item {
             width: 30%;
             background-color: var(--gray);
@@ -166,100 +185,96 @@
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
-
+    
         .cx-how-it-works ul li:hover, .benefits-item:hover {
             transform: translateY(-10px);
         }
-
+    
         .benefits-item img {
             width: 80px;
             height: 80px;
             margin-bottom: 20px;
         }
-
+    
         footer {
             background-color: var(--primary-color);
             color: white;
             padding: 40px 0;
             text-align: center;
         }
-
+    
         footer .social-links {
             margin-top: 20px;
         }
-
+    
         footer .social-links a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
         }
-
-        /* Replace the existing @media (max-width: 768px) section with this */
-    @media (max-width: 768px) {
-        header {
-            flex-direction: column;
-            padding: 20px 0;
-            position: relative;
-            gap: 15px;
+    
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 15px;
+                gap: 20px;
+                justify-content: center;
+            }
+    
+            .logo {
+                width: 150px;
+                order: 1;
+            }
+    
+            .site-title {
+                font-size: 1.8rem !important;
+                order: 2;
+                width: 100%;
+                margin: 0;
+            }
+    
+            .language-selector {
+                order: 3;
+                gap: 8px;
+                padding: 0 10px;
+            }
+    
+            .language-button {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+    
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+    
+            .cx-how-it-works ul li, .benefits-item {
+                width: 45%;
+            }
         }
     
-        .logo {
-            width: 150px;
-            margin: 0 auto;
-        }
+        @media (max-width: 480px) {
+            .site-title {
+                font-size: 1.6rem !important;
+            }
     
-        .site-title {
-            font-size: 1.8rem !important;
-            position: static !important;
-            transform: none !important;
-            text-align: center;
-            margin: 0;
-            order: 2;
-        }
+            .logo {
+                width: 130px;
+            }
     
-        .language-selector {
-            order: 3;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            padding: 0 15px;
-            margin-top: 15px;
-        }
+            .language-button {
+                width: 100%;
+                text-align: center;
+            }
     
-        .language-button {
-            padding: 8px 15px;
-            font-size: 0.9rem;
-            margin: 0;
-        }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
     
-        /* Remove absolute positioning from title link */
-        header > a:nth-child(2) {
-            position: static;
-            transform: none;
+            .cx-how-it-works ul li, .benefits-item {
+                width: 100%;
+            }
         }
-    }
-    
-    /* Add this new media query for very small screens */
-    @media (max-width: 480px) {
-        .site-title {
-            font-size: 1.5rem !important;
-        }
-        
-        .logo {
-            width: 120px;
-        }
-        
-        .language-button {
-            width: 100%;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 2rem !important;
-        }
-    }
     </style>
-</head>
 <body>
     <header>
         <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
