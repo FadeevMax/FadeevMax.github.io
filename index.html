@@ -1,33 +1,12 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" id="favicon" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" id="favicon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belgrade Rent</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const updateFavicon = () => {
-                const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                const favicon = document.getElementById("favicon");
-
-                if (favicon) { // Ensure favicon element exists before modifying it
-                    favicon.href = darkMode ? "/favicon-96x96.png" : "/favicon-96x96.png";
-                }
-            };
-
-            // Run on page load
-            updateFavicon();
-
-            // Update on theme change
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateFavicon);
-        });
-    </script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belgraderents | Iznajmite stan Rusima u Beogradu | izdajte svoju nekretninu</title>
-    <meta name="description" content="Lako izdajte svoju nekretninu | Izdavanje stanova Beograd Srbija" />
-    <meta name="keywords" content="Iznajmiti stan Rusima, izdavanje stanova Beograd, iznajmljivanje nekretnina Srbija, stanovi za izdavanje, izdavanje stanova bez provizije, upravljanje nekretninama Beograd, dugoročni najam, rent apartment Belgrade, найти жильцов Белград, сдать квартиру в Белграде, property management Serbia, long-term rental Belgrade" />
+    <meta name="description" content="Lako izdajte svoju nekretninu | Izdavanje stanova Beograd Srbija">
+    <meta name="keywords" content="Iznajmiti stan Rusima, izdavanje stanova Beograd, iznajmljivanje nekretnina Srbija, stanovi za izdavanje, izdavanje stanova bez provizije, upravljanje nekretninama Beograd, dugoročni najam, rent apartment Belgrade, найти жильцов Белград, сдать квартиру в Белграде, property management Serbia, long-term rental Belgrade">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -40,17 +19,7 @@
     <meta property="twitter:url" content="http://www.belgraderents.com/">
     <meta property="twitter:title" content="Belgraderent: Profesionalno Upravljanje Nekretninama">
     <meta property="twitter:description" content="Profesionalno upravljanje nekretninama u Beogradu. Brzo i lako izdajte stan, pronađite pouzdane stanare.">
-    <header>
-        <a href="index.html" class="logo-link">
-            <img src="Our_logo3.png" alt="Belgraderent Logo" class="logo">
-        </a>
-        <h1 class="site-title">Belgraderent</h1>
-        <nav class="language-selector">
-            <button class="language-button" onclick="changeLanguage('en')">English</button>
-            <button class="language-button" onclick="changeLanguage('sr')">Srpski</button>
-            <a href="Rus_page.html" class="language-button">Izdavanje Rusima</a>
-        </nav>
-    </header>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #000000;
@@ -60,116 +29,57 @@
             --background-color: #ffffff;
             --gray: #f7f7f7;
         }
-    
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Helvetica Neue', sans-serif;
         }
-    
+
         body {
             background-color: var(--background-color);
             color: var(--text-color);
             font-size: 16px;
             line-height: 1.6;
         }
-    
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+
+        /* Header Structure */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--background-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
         }
-        /* Add these header styles */
-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 5%;
-    background-color: var(--background-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
-    gap: 15px;
-}
 
-.logo-link {
-    flex: 0 0 auto;
-    order: 1;
-}
-
-.site-title {
-    flex: 1 1 100%;
-    order: 3;
-    text-align: center;
-    font-size: 2rem;
-    margin: 15px 0 0 0;
-    padding: 0 10px;
-    font-family: 'Playfair Display', serif;
-    color: var(--primary-color);
-    font-weight: 700;
-}
-
-.language-selector {
-    flex: 0 1 auto;
-    order: 2;
-    display: flex;
-    gap: 10px;
-    padding: 0 10px;
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 20px 15px;
-    }
-    
-    .site-title {
-        order: 2;
-        font-size: 1.8rem;
-        margin: 0;
-    }
-    
-    .language-selector {
-        order: 3;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .language-button {
-        flex: 1 1 45%;
-        min-width: 120px;
-    }
-}
-
-@media (max-width: 480px) {
-    .site-title {
-        font-size: 1.6rem;
-    }
-    
-    .language-button {
-        flex: 1 1 100%;
-    }
-}
-    
         .logo {
             width: 200px;
             height: auto;
-            order: 1;
+            z-index: 1;
         }
-    
-    
+
+        .site-title {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
         .language-selector {
             display: flex;
-            gap: 10px;
-            order: 3;
-            justify-content: center;
-            flex-wrap: wrap;
+            gap: 15px;
+            z-index: 1;
         }
-    
+
         .language-button {
-            padding: 8px 20px;
+            padding: 10px 20px;
             background-color: var(--accent-color);
             color: var(--background-color);
             border: none;
@@ -179,11 +89,46 @@ header {
             text-decoration: none;
             font-size: 0.9rem;
         }
-    
+
         .language-button:hover {
             background-color: var(--secondary-color);
         }
-    
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 15px;
+                text-align: center;
+            }
+
+            .site-title {
+                position: static;
+                transform: none;
+                font-size: 2rem;
+                order: 2;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .language-selector {
+                order: 3;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .language-button {
+                flex: 1 1 45%;
+                min-width: 140px;
+                padding: 10px 15px;
+            }
+        }
+
+        /* Hero Section */
         .hero {
             background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3');
             background-size: cover;
@@ -197,13 +142,13 @@ header {
             justify-content: center;
             align-items: center;
         }
-    
+
         .hero h1 {
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
         }
-    
+
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
@@ -215,30 +160,31 @@ header {
             margin: 10px;
             transition: background-color 0.3s ease;
         }
-    
+
         .cta-button:hover {
             background-color: var(--secondary-color);
         }
-    
+
+        /* Content Sections */
         .cx-how-it-works, .benefits, .contact {
             padding: 80px 0;
             text-align: center;
         }
-    
+
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 40px;
             color: var(--primary-color);
             font-weight: 700;
         }
-    
+
         .cx-how-it-works ul, .benefits-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
         }
-    
+
         .cx-how-it-works ul li, .benefits-item {
             width: 30%;
             background-color: var(--gray);
@@ -246,36 +192,47 @@ header {
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
-    
+
         .cx-how-it-works ul li:hover, .benefits-item:hover {
             transform: translateY(-10px);
         }
-    
+
         .benefits-item img {
             width: 80px;
             height: 80px;
             margin-bottom: 20px;
         }
-    
+
         footer {
             background-color: var(--primary-color);
             color: white;
             padding: 40px 0;
             text-align: center;
         }
-    
+
         footer .social-links {
             margin-top: 20px;
         }
-    
+
         footer .social-links a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
         }
     </style>
+</head>
 <body>
-    
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="Our_logo3.png" alt="Belgraderent Logo" class="logo">
+        </a>
+        <h1 class="site-title">Belgraderent</h1>
+        <nav class="language-selector">
+            <button class="language-button" onclick="changeLanguage('en')">English</button>
+            <button class="language-button" onclick="changeLanguage('sr')">Srpski</button>
+            <a href="Rus_page.html" class="language-button">Izdavanje Rusima</a>
+        </nav>
+    </header>
 
     <section class="hero">
         <h1 id="hero-title">Maximize Your Property's Potential in Belgrade</h1>
