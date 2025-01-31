@@ -232,6 +232,62 @@
             max-width: 200px;
             text-align: center;
         }
+        .contact { 
+            background-color: var(--gray); 
+            padding: 60px 5%; 
+            text-align: center; 
+        } 
+        .contact-grid { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-bottom: 30px; 
+        } 
+        .contact-method { 
+            background-color: white; 
+            padding: 25px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            width: 300px; 
+            transition: transform 0.3s ease; 
+        } 
+        .contact-method:hover { 
+            transform: translateY(-10px); 
+        } 
+        .contact-method h3 { 
+            margin-bottom: 15px; 
+            color: var(--accent-color); 
+        } 
+        .contact-cta { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            background-color: var(--accent-color); 
+            color: white; 
+            text-decoration: none; 
+            padding: 12px 20px; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            transition: background-color 0.3s ease; 
+        } 
+        .contact-cta:hover { 
+            background-color: var(--primary-color); 
+        } 
+        .contact-cta svg { 
+            stroke: white; 
+        } 
+        .working-hours { 
+            text-align: center; 
+            margin-top: 20px; 
+            color: var(--text-color); 
+        } 
+        @media (max-width: 768px) { 
+            .contact-grid { 
+                flex-direction: column; 
+                align-items: center; 
+            } 
+        }
     </style>
 </head>
 <body>
@@ -293,14 +349,43 @@
 </section>
 
 <section class="contact" id="contact">
-    <h2 class="section-title" id="contact-title" data-translate="contact-title"></h2>
-    <p id="contact-text" data-translate="contact-text"></p>
-    <div class="contact-buttons">
-        <a href="tel:+381601573857" id="phone-number" class="cta-button" data-translate="phone-number"></a>
-        <a href="mailto:teambelgraderent@gmail.com" id="email-us" class="cta-button" data-translate="email-us"></a>
-        <a href="https://t.me/belgraderent" target="_blank" id="contact-telegram" class="cta-button" data-translate="contact-telegram"></a>
-    </div>
-</section>
+        <h2 class="section-title" id="contact-title" data-translate="contact-title"></h2>
+        <p id="contact-text" data-translate="contact-text"></p>
+        <div class="contact-grid">
+            <div class="contact-method">
+                <h3>Call Us Directly</h3>
+                <a href="tel:+381601573857" id="phone-number" class="contact-cta" data-translate="phone-number">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    +381 601 57 38 57
+                </a>
+            </div>
+            <div class="contact-method">
+                <h3>Telegram Connection</h3>
+                <a href="https://t.me/belgraderent" target="_blank" id="contact-telegram" class="contact-cta" data-translate="contact-telegram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.798 10.447c1.295-1.111 0.529-3.447-1.313-3.447h-14.97c-1.009 0-1.58 1.147-0.894 2.014l6.777 8.215c0.405 0.491 1.063 0.771 1.751 0.771h5.907c1.841 0 2.635-2.336 1.342-3.447z"></path>
+                    </svg>
+                    Message on Telegram
+                </a>
+            </div>
+            <div class="contact-method">
+                <h3>Email Support</h3>
+                <a href="mailto:teambelgraderent@gmail.com" id="email-us" class="contact-cta" data-translate="email-us">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Request Property Management
+                </a>
+            </div>
+        </div>
+        <div class="working-hours">
+            <h3>Always Available</h3>
+            <p id="business-hours" data-translate="business-hours">24/7 Support | Immediate Response</p>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2025 Belgraderent. All rights reserved.</p>
         <div class="social-links">
@@ -329,11 +414,12 @@
             "benefit-2-text": "Comprehensive background checks and verification process",
             "benefit-3-title": "Proactive Maintenance",
             "benefit-3-text": "Regular property inspections and swift issue resolution",
-            "contact-title": "Contact us on telegram, phone number or Email for more information.",
-            "contact-text": "How to contact us and our working hours",
+            "contact-title": "Get Your Property Rented Quickly",
+            "contact-text": "Professional Property Management Just a Click Away",
             "phone-number": "+381 601 57 38 57",
-            "business-hours": "Business Hours: Contact us any time",
-            "email-us": "Email Us",
+            "contact-telegram": "Message on Telegram",
+            "email-us": "Request Property Management",
+            "business-hours": "24/7 Support | Immediate Response",
             "social-telegram": "Telegram"
         },
         sr: {
@@ -355,11 +441,12 @@
             "benefit-2-text": "Detaljna provera i verifikacija stanara",
             "benefit-3-title": "Proaktivno održavanje",
             "benefit-3-text": "Redovne inspekcije i brzo rešavanje problema",
-            "contact-title": "Kontaktirajte nas na Telegramu, broju telefona ili Email-u",
-            "contact-text": "Kako da nas kontaktirate i naše radno vreme",
+            "contact-title": "Brzo i lako do iznajmljivanja vaše nekretnine",
+            "contact-text": "Profesionalno upravljanje nekretninama - jedan klik do uspeha",
             "phone-number": "+381 60 1573 857",
-            "business-hours": "Radno vreme: Možete da nas kontaktirate u bilo koje vreme",
-            "email-us": "Pošaljite email",
+            "contact-telegram": "Kontaktirajte nas na Telegramu",
+            "email-us": "Zatražite upravljanje nekretninom",
+            "business-hours": "Podržka 24/7 | Trenutni odgovor",
             "social-telegram": "Telegram"
         }
     };
