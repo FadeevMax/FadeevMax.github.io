@@ -228,8 +228,7 @@
         </a>
         <h1 class="site-title">Belgraderent</h1>
         <nav class="language-selector">
-            <button class="language-button" onclick="changeLanguage('en')">English</button>
-            <button class="language-button" onclick="changeLanguage('sr')">Srpski</button>
+            <button id="language-button" class="language-button" onclick="toggleLanguage()">EN</button>
             <a href="Rus_page.html" class="language-button">Izdavanje Rusima?</a>
         </nav>
     </header>
@@ -297,70 +296,79 @@
     </footer>
 
     <script>
-        const translations = {
-            en: {
-                "hero-title": "Rent your property with us fast and easy",
-                "hero-text": "Trustworthy Professional property management services for any type of real estate",
-                "cta-1": "List Your Property",
-                "cta-2": "Contact on Telegram",
-                "how-works-title": "How We Help You Rent Your Property",
-                "how-works-1-title": "Find Perfect Tenants",
-                "how-works-1-text": "We help you find reliable, long-term tenants quickly and efficiently",
-                "how-works-2-title": "No Hidden Fees",
-                "how-works-2-text": "Transparent pricing with no additional commissions or hidden costs",
-                "how-works-3-title": "Professional Management",
-                "how-works-3-text": "Complete property management from tenant screening to maintenance",
-                "benefits-title": "Why Property Owners Trust Us",
-                "benefit-1-title": "Local Market Expertise",
-                "benefit-1-text": "In-depth understanding of Belgrade's real estate dynamics",
-                "benefit-2-title": "Rigorous Tenant Screening",
-                "benefit-2-text": "Comprehensive background checks and verification process",
-                "benefit-3-title": "Proactive Maintenance",
-                "benefit-3-text": "Regular property inspections and swift issue resolution",
-                "contact-title": "Contact us on telegram, phone number or Email for more information.",
-                "contact-text": "How to reach out to us and our working hours",
-                "phone-number": "+381 601 57 38 57",
-                "business-hours": "Business Hours: Contact us any time",
-                "email-us": "Email Us",
-                "social-telegram": "Telegram"
-            },
-            sr: {
-                "hero-title": "Iznajmite Vašu nekretninu kod nas brzo i lako",
-                "hero-text": "Profesionalne usluge upravljanja nekretninama za zahtevne vlasnike",
-                "cta-1": "Iznajmite svoj objekat",
-                "cta-2": "Kontaktirajte nas preko Telegrama",
-                "how-works-title": "Kako pomažemo da iznajmite svoj objekat",
-                "how-works-1-title": "Pronađite savršene stanare",
-                "how-works-1-text": "Pomažemo da brzo i efikasno pronađete pouzdane dugoročne stanare",
-                "how-works-2-title": "Bez skrivenih troškova",
-                "how-works-2-text": "Transparentna cena bez dodatnih provizija i skrivenih troškova",
-                "how-works-3-title": "Profesionalno upravljanje",
-                "how-works-3-text": "Kompletno upravljanje nekretninama od provere stanara do održavanja",
-                "benefits-title": "Zašto nas vlasnici nekretnina biraju",
-                "benefit-1-title": "Poznavanje tržišta",
-                "benefit-1-text": "Duboko razumevanje tržišta nekretnina u Beogradu",
-                "benefit-2-title": "Provereni stanari",
-                "benefit-2-text": "Detaljna provera i verifikacija stanara",
-                "benefit-3-title": "Proaktivno održavanje",
-                "benefit-3-text": "Redovne inspekcije i brzo rešavanje problema",
-                "contact-title": "Kontaktirajte nas na Telegramu, broju telefona ili Email-u",
-                "contact-text": "Kako da nas kontaktirate i naše radno vreme",
-                "phone-number": "+381 60 1573 857",
-                "business-hours": "Radno vreme: Možete da nas kontaktirate u bilo koje vreme",
-                "email-us": "Pošaljite email",
-                "social-telegram": "Telegram"
-            }
-        };
-
-        function changeLanguage(lang) {
-            const elements = document.querySelectorAll("[id]");
-            elements.forEach(el => {
-                const key = el.id;
-                if (translations[lang][key]) {
-                    el.innerText = translations[lang][key];
-                }
-            });
+    const translations = {
+        en: {
+            "hero-title": "Rent your property with us fast and easy",
+            "hero-text": "Trustworthy Professional property management services for any type of real estate",
+            "cta-1": "List Your Property",
+            "cta-2": "Contact on Telegram",
+            "how-works-title": "How We Help You Rent Your Property",
+            "how-works-1-title": "Find Perfect Tenants",
+            "how-works-1-text": "We help you find reliable, long-term tenants quickly and efficiently",
+            "how-works-2-title": "No Hidden Fees",
+            "how-works-2-text": "Transparent pricing with no additional commissions or hidden costs",
+            "how-works-3-title": "Professional Management",
+            "how-works-3-text": "Complete property management from tenant screening to maintenance",
+            "benefits-title": "Why Property Owners Trust Us",
+            "benefit-1-title": "Local Market Expertise",
+            "benefit-1-text": "In-depth understanding of Belgrade's real estate dynamics",
+            "benefit-2-title": "Rigorous Tenant Screening",
+            "benefit-2-text": "Comprehensive background checks and verification process",
+            "benefit-3-title": "Proactive Maintenance",
+            "benefit-3-text": "Regular property inspections and swift issue resolution",
+            "contact-title": "Contact us on telegram, phone number or Email for more information.",
+            "contact-text": "How to contact us and our working hours",
+            "phone-number": "+381 601 57 38 57",
+            "business-hours": "Business Hours: Contact us any time",
+            "email-us": "Email Us",
+            "social-telegram": "Telegram"
+        },
+        sr: {
+            "hero-title": "Iznajmite Vašu nekretninu kod nas brzo i lako",
+            "hero-text": "Profesionalne usluge upravljanja nekretninama za zahtevne vlasnike",
+            "cta-1": "Iznajmite svoj objekat",
+            "cta-2": "Kontaktirajte nas preko Telegrama",
+            "how-works-title": "Kako pomažemo da iznajmite svoj objekat",
+            "how-works-1-title": "Pronađite savršene stanare",
+            "how-works-1-text": "Pomažemo da brzo i efikasno pronađete pouzdane dugoročne stanare",
+            "how-works-2-title": "Bez skrivenih troškova",
+            "how-works-2-text": "Transparentna cena bez dodatnih provizija i skrivenih troškova",
+            "how-works-3-title": "Profesionalno upravljanje",
+            "how-works-3-text": "Kompletno upravljanje nekretninama od provere stanara do održavanja",
+            "benefits-title": "Zašto nas vlasnici nekretnina biraju",
+            "benefit-1-title": "Poznavanje tržišta",
+            "benefit-1-text": "Duboko razumevanje tržišta nekretnina u Beogradu",
+            "benefit-2-title": "Provereni stanari",
+            "benefit-2-text": "Detaljna provera i verifikacija stanara",
+            "benefit-3-title": "Proaktivno održavanje",
+            "benefit-3-text": "Redovne inspekcije i brzo rešavanje problema",
+            "contact-title": "Kontaktirajte nas na Telegramu, broju telefona ili Email-u",
+            "contact-text": "Kako da nas kontaktirate i naše radno vreme",
+            "phone-number": "+381 60 1573 857",
+            "business-hours": "Radno vreme: Možete da nas kontaktirate u bilo koje vreme",
+            "email-us": "Pošaljite email",
+            "social-telegram": "Telegram"
         }
-    </script>
+    };
+
+    let currentLanguage = 'en'; // Default language
+
+    function toggleLanguage() {
+        const newLanguage = currentLanguage === 'en' ? 'sr' : 'en';
+        changeLanguage(newLanguage);
+        currentLanguage = newLanguage;
+        document.getElementById('language-button').innerText = newLanguage === 'en' ? 'SR' : 'EN';
+    }
+
+    function changeLanguage(lang) {
+        const elements = document.querySelectorAll("[id]");
+        elements.forEach(el => {
+            const key = el.id;
+            if (translations[lang][key]) {
+                el.innerText = translations[lang][key];
+            }
+        });
+    }
+</script>
 </body>
 </html>
