@@ -219,6 +219,9 @@
             margin: 0 15px;
             text-decoration: none;
         }
+        .contact-text {
+            margin-bottom: 30px; /* Add some space between text and contact methods */
+        }
         .contact-buttons {
             display: flex;
             justify-content: center;
@@ -394,6 +397,7 @@
     </footer>
 
     <script>
+
     const translations = {
         en: {
             "hero-title": "Rent your property with us fast and easy",
@@ -417,8 +421,12 @@
             "contact-title": "Get Your Property Rented Quickly",
             "contact-text": "Professional Property Management Just a Click Away",
             "phone-number": "+381 601 57 38 57",
+            "contact-method-1-title": "Call Us Directly",
+            "contact-method-2-title": "Telegram Connection",
+            "contact-method-3-title": "Email Support",
             "contact-telegram": "Message on Telegram",
             "email-us": "Request Property Management",
+            "business-hours-title": "Always Available",
             "business-hours": "24/7 Support | Immediate Response",
             "social-telegram": "Telegram"
         },
@@ -442,11 +450,15 @@
             "benefit-3-title": "Proaktivno održavanje",
             "benefit-3-text": "Redovne inspekcije i brzo rešavanje problema",
             "contact-title": "Brzo i lako do iznajmljivanja vaše nekretnine",
-            "contact-text": "Profesionalno upravljanje nekretninama - jedan klik do uspeha",
+            "contact-text": "Profesionalno upravljanje nekretninama - jedan korak do uspeha",
             "phone-number": "+381 60 1573 857",
+            "contact-method-1-title": "Pozovite nas direktno",
+            "contact-method-2-title": "Kontakt na Telegramu",
+            "contact-method-3-title": "Podrška putem e-pošte",
             "contact-telegram": "Kontaktirajte nas na Telegramu",
             "email-us": "Zatražite upravljanje nekretninom",
-            "business-hours": "Podržka 24/7 | Trenutni odgovor",
+            "business-hours-title": "Uvek na raspolaganju",
+            "business-hours": "Podrška 24/7 | Trenutni odgovor",
             "social-telegram": "Telegram"
         }
     };
@@ -468,10 +480,17 @@
                 el.innerText = translations[lang][key];
             }
         });
+
+        // Update contact method titles
+        document.querySelector('.contact-method:nth-child(1) h3').innerText = translations[lang]['contact-method-1-title'];
+        document.querySelector('.contact-method:nth-child(2) h3').innerText = translations[lang]['contact-method-2-title'];
+        document.querySelector('.contact-method:nth-child(3) h3').innerText = translations[lang]['contact-method-3-title'];
+        document.querySelector('.working-hours h3').innerText = translations[lang]['business-hours-title'];
     }
-document.addEventListener("DOMContentLoaded", function() {
-    changeLanguage(currentLanguage); // Set initial language
-});
-</script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        changeLanguage(currentLanguage); // Set initial language
+    });
+    </script>
 </body>
 </html>
