@@ -5,13 +5,13 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>http://www.belgraderents.com/index.html</loc>
-        <lastmod>2024-01-15</lastmod>
+        <lastmod>2024-02-01</lastmod>
         <priority>1.00</priority>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>http://www.belgraderents.com/Rus_page.html</loc>
-        <lastmod>2024-01-15</lastmod>
+        <lastmod>2024-02-01</lastmod>
         <priority>0.80</priority>
         <changefreq>weekly</changefreq>
     </url>
